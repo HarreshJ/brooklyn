@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Playwrite+DE+Grund:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+
+body {
+    font-family: "Poppins";
+    background-color: #008080;
+}
+
+/* Default padding for desktop */
+body {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  
+  /* Remove padding for mobile devices */
+  @media (max-width: 768px) {
+    body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+nav {
+    background-color: #F2F3EE;
+    position: fixed;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 20px; /* Rounded corners */
+    font-family: 'Dangrek';
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #F2F3EE;
+    height: 65px;
+    color: #F2F3EE;
+    text-align: center;
+    z-index: 1000; /* Ensure it stays on top of other content */
+    font-size:25px;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    z-index: 0; 
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    border: 8px solid #13344C;
+    border-radius: 10px;
+    opacity: 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    z-index: -1; 
+
+}
+
+nav ul li:hover::after {
+    width: calc(90%); 
+    height: calc(90%); 
+    opacity: 1;
+}
+
+section {
+    padding: 20px;
+    margin: 50px 0;    
+    transition: opacity 0.3s ease; /* Smooth fade-in transition */
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+/* Additional CSS for the fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: Slide in from bottom */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main_heading {
+    padding: 10px;
+    margin: 10px 10px;
+    text-align: center;
+    font-size: 60px;
+    font-family: "Dangrek";
+    color: #13344C;
+    transform: translate(0,17%)
+}
+
+.headline {
+    border: 5px solid #F2F3EE;
+    background-color: #F2F3EE;
+    border-radius: 100px;
+    text-align: center;
+    font-family: 'Dangrek';
+    font-size: 50px;
+    color: black;
+}
+
+.brooklyn_history {
+    color: #F2F3EE;
+    font-size: 20px;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-event {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #F2F3EE;
+    border-left: 10px solid #13344C;
+    width: 80%;
+}
+
+.timeline-event h3 {
+    margin: 0;
+    color: #25274D;
+}
+
+.timeline-event p {
+    margin: 5px 0 0 0;
+}
+
+th, td {
+    border: 10px solid #13344C;
+    background-color: #F2F3EE ;
+} 
+
+td {
+    padding: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table_headings {
+    font-size: 27px;
+}
+
+.skills {
+    color: #F2F3EE;
+}
+
+.extraInfo {
+    color: #F2F3EE;
+    font-size: 20px;
+}
+
+.list_french {
+    color: #F2F3EE;
+    font-size: 20px;
+    font-family: "Poppins";
+}
+
+.carousel {
+    position: relative;
+    max-width: 500px; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center carousel horizontally */
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%; /* Full width of carousel container */
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #F2F3EE;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
